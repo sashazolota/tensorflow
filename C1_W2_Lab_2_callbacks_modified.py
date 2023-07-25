@@ -18,15 +18,15 @@ class myCallback(tf.keras.callbacks.Callback):
         '''
 
     # Check the loss
-    if(logs.get('loss') < 0.4):
-        # Stop if threshold is met
-        print("\nLoss is lower than 0.4 so cancelling training!")
-        self.model.stop_training = True
+        if(logs.get('loss') < 0.4):
+            # Stop if threshold is met
+            print("\nLoss is lower than 0.4 so cancelling training!")
+            self.model.stop_training = True
 
     # modified code to accuracy metrix
-    if (logs.get('accuracy') > 0.6):
-        print("\nAccuracy is more than 60%, training stops.")
-        self.model.stop_training = True
+        if (logs.get('accuracy') > 0.6):
+            print("\nAccuracy is more than 60%, training stops.")
+            self.model.stop_training = True
 
     # Instantiate class
 callbacks = myCallback()
